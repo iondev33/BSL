@@ -67,7 +67,7 @@ set_target_properties(bsl_crypto
 )
 target_link_libraries(bsl_crypto PUBLIC bsl_front)
 target_link_libraries(bsl_crypto PUBLIC MLIB::mlib)
-target_link_libraries(bsl_crypto INTERFACE OpenSSL::Crypto)
+target_link_libraries(bsl_crypto PRIVATE OpenSSL::Crypto)
 if(TARGET valgrind::valgrind)
   target_compile_definitions(bsl_crypto PRIVATE HAVE_VALGRIND)
 endif(TARGET valgrind::valgrind)
